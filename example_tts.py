@@ -18,5 +18,5 @@ model = ChatterboxMultilingualTTS.from_checkpoint(
 )
 
 text = "Ezreal and Jinx teamed up with Ahri, Yasuo, and Teemo to take down the enemy's Nexus in an epic late-game pentakill."
-wav = model.generate(text)
+wav = model.generate(text, language_id="")
 ta.save("test-1.wav", wav, model.sr)
