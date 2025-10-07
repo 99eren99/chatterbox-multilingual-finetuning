@@ -331,7 +331,7 @@ class ChatterboxMultilingualTTS:
         text_tokens = F.pad(text_tokens, (0, 1), value=eot)
 
         with torch.inference_mode():
-            """speech_tokens = self.t3.inference(
+            speech_tokens = self.t3.inference(
                 t3_cond=self.conds.t3,
                 text_tokens=text_tokens,
                 max_new_tokens=1000,  # TODO: use the value in config
@@ -340,15 +340,6 @@ class ChatterboxMultilingualTTS:
                 repetition_penalty=repetition_penalty,
                 min_p=min_p,
                 top_p=top_p,
-            )"""
-            speech_tokens = self.t3.inference(
-                t3_cond=self.conds.t3,
-                text_tokens=text_tokens,
-                max_new_tokens=2000,  # TODO: use the value in config
-                temperature=temperature,
-                cfg_weight=cfg_weight,
-                repetition_penalty=repetition_penalty,
-                do_sample=False,
             )
             # Extract only the conditional batch.
             speech_tokens = speech_tokens[0]
