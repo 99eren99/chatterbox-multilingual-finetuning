@@ -37,7 +37,7 @@ def generate(model, text, audio_prompt_path, exaggeration, temperature, seed_num
 
     wav = model.generate(
         text,
-        language_id="tr",
+        language_id="",
         audio_prompt_path=audio_prompt_path,
         exaggeration=exaggeration,
         temperature=temperature,
