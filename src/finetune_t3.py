@@ -82,7 +82,7 @@ class ModelArguments:
 
 @dataclass
 class DataArguments:
-    language: str = field(
+    language: Optional[str] = field(
         default="en",
         metadata={"help": "State target language code: 'en' , 'tr' ..."},
     )
